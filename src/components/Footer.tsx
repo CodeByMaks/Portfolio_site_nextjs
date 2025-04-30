@@ -86,9 +86,9 @@ export function Footer() {
 						<li className='flex items-center gap-2'>
 							<FileDown size={16} />{' '}
 							<a
-								href='/your-cv.pdf'
-								download
+								href='/CV%20Resume.pdf'
 								className='flex items-center gap-2 text-sm hover:text-foreground'
+								download="Maks_CV.pdf"
 							>
 								My CV
 							</a>
@@ -98,7 +98,7 @@ export function Footer() {
 			</div>
 
 			<div className='mt-10 text-center text-xs text-muted-foreground/70'>
-				© {new Date().getFullYear()} Your Name. Built with Next.js & Tailwind
+				© {new Date().getFullYear()} Maks. Built with Next.js & Tailwind
 				CSS.
 			</div>
 		</motion.footer>
