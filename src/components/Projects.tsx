@@ -14,7 +14,7 @@ const projects = [
     image: '/projects/darkbyteshop.png',
     tech: ['Next.js', 'Tailwind CSS', 'Swiper', 'ShadCN'],
     live: 'https://darkbyteshop.vercel.app',
-    code: 'https://github.com/yourusername/darkbyteshop'
+    code: 'https://github.com/CodeByMaks?tab=repositories'
   },
   {
     title: 'Portfolio',
@@ -22,7 +22,7 @@ const projects = [
     image: '/projects/portfolio.png',
     tech: ['React', 'GSAP', 'Three.js'],
     live: 'https://yourportfolio.vercel.app',
-    code: 'https://github.com/yourusername/portfolio'
+    code: 'https://github.com/CodeByMaks?tab=repositories'
   },
   {
     title: 'AI Image Generator',
@@ -30,7 +30,7 @@ const projects = [
     image: '/projects/ai-generator.png',
     tech: ['OpenAI', 'Node.js', 'React'],
     live: 'https://ai-generator.vercel.app',
-    code: 'https://github.com/yourusername/ai-generator'
+    code: 'https://github.com/CodeByMaks?tab=repositories'
   }
 ]
 
