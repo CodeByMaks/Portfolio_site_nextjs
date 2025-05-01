@@ -47,10 +47,10 @@ export default function ProjectsPage() {
           className="text-center mb-20"
         >
           <h1 className="text-5xl md:text-6xl font-bold mb-4 text-black dark:text-white bg-clip-text">
-             Мои проекты
+             My projects
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Здесь собраны мои лучшие работы, сочетающие современные технологии и креативный подход
+          Here are my works that combine modern technologies and a creative approach
           </p>
         </motion.div>
 
@@ -137,7 +137,7 @@ export default function ProjectsPage() {
             variant="outline" 
             className="dark:border-white/20 border-gray-800 hover:border-white/40 hover:bg-white/10 px-8 py-6 text-lg"
           >
-            Больше проектов на GitHub
+           More projects on GitHub
           </Button>
           </Link>
         </motion.div>

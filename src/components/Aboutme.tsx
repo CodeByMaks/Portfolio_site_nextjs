@@ -14,26 +14,26 @@ import { BackgroundBeams } from './aceternity/ui/background-beams'
 const techStack = [
   { category: 'Frontend', items: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Shadcn/ui'] },
   { category: '3D & Animation', items: ['Three.js', 'Framer Motion', 'GSAP'] },
-  { category: 'Core', items: ['JavaScript', 'HTML/CSS', 'REST API'] },
-  { category: 'Learning', items: ['Node.js', 'Express', 'PostgreSQL'] }
+  { category: 'Core', items: ['JavaScript', 'HTML/CSS', 'REST API', 'Redux Toolkit', 'axios', 'Git'] },
+  { category: 'Want to lear', items: ['C / C++/ C#', 'GO', 'Python', 'SQL', 'Assembly', 'Docker'] }
 ]
 
 const hobbies = [
   { 
-    title: 'Шахматы', 
-    description: 'Люблю стратегическое мышление и тактику. Играю как онлайн, так и оффлайн с друзьями.' 
+    title: 'A number of different genres of games', 
+    description: 'I love strategic thinking, tactics and miscellaneous. I play both online and offline with friends.' 
   },
   { 
-    title: 'Чтение', 
-    description: 'Особенно научную фантастику и техническую литературу. Люблю книги, которые расширяют кругозор.' 
+    title: 'Reading', 
+    description: 'Especially detective stories, psychology, science fiction and technical literature. I love books that broaden my horizons.' 
   },
   { 
-    title: 'Спорт', 
-    description: 'Футбол, баскетбол, плавание - всё, что дает заряд энергии и поддерживает форму.' 
+    title: 'Sports', 
+    description: 'Football, volleyball - everything that gives a boost of energy and keeps fit. As well as other different sports that strengthen health' 
   },
   { 
-    title: 'Музыка', 
-    description: 'От классики до электроники. Музыка - это часть моего творческого процесса.' 
+    title: 'Music', 
+    description: 'From classics to electronics. Music is part of me and my creative process.' 
   }
 ]
 
@@ -41,22 +41,22 @@ const tools = [
   { 
     name: 'VS Code', 
     icon: vscodeIcon, 
-    description: 'Мой основной редактор кода с идеальной поддержкой React, TypeScript и Next.js.' 
+    description: 'My main code editor with perfect support for React, TypeScript, and Next.js.' 
   },
   { 
     name: 'Linux', 
     icon: linuxIcon, 
-    description: 'Основная среда разработки - быстрая, гибкая и эффективная.' 
+    description: 'The main development environment is fast, flexible, and efficient.' 
   },
   { 
     name: 'VS Enterprise', 
     icon: vsenterprice, 
-    description: 'Использую для крупных проектов, особенно с C# и .NET.' 
+    description: 'I use it for large projects, especially with C# and.NET.' 
   },
   { 
     name: 'Figma', 
     icon: figmaIcon, 
-    description: 'Инструмент для проектирования UI/UX интерфейсов.' 
+    description: 'A tool for designing UI/UX interfaces.' 
   }
 ]
 
@@ -120,22 +120,20 @@ export default function AboutMe() {
       >
         <motion.div variants={itemVariants} className="w-full lg:w-1/2">
           <h2 className="text-5xl font-bold mb-6 leading-tight bg-clip-text text-black dark:text-white ">
-            Привет, я Макс!
+          Hi, I`m Muhsin!
           </h2>
           
           <div className="space-y-6">
             <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
-              Я фронтенд-разработчик, который превращает сложные идеи в элегантные, интуитивные интерфейсы. 
-              Для меня программирование - это искусство, где код становится инструментом реализации творческих замыслов.
+            I`m a front-end developer who turns complex ideas into elegant, intuitive, and interesting interfaces. For me, programming is an art where code becomes a tool for the realization of creative ideas.
             </p>
             
             <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
-              В своей работе я ищу нестандартные решения, экспериментирую с новыми технологиями и стремлюсь 
-              создавать продукты, которые впечатляют не только функциональностью, но и эстетикой.
+            In my work, I look for non-standard solutions, experiment with new technologies and strive To create products that impress not only with functionality, but also with aesthetics. I am looking for opportunities and ideas to realize my fantasies and for this I use different means and tools.
             </p>
             
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold">Мой стек технологий:</h3>
+              <h3 className="text-2xl font-semibold">My Technology Stack:</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {techStack.map((stack, index) => (
                   <div key={index} className="p-4 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10">
@@ -182,9 +180,9 @@ export default function AboutMe() {
         variants={containerVariants}
         className="mt-32 relative z-10"
       >
-        <h3 className="text-3xl font-bold text-center mb-6">Мои увлечения</h3>
+        <h3 className="text-3xl font-bold text-center mb-6">My hobbies</h3>
         <p className="text-lg text-gray-600 dark:text-gray-300 mb-12 text-center max-w-3xl mx-auto">
-          Когда я не пишу код, вы можете найти меня за одним из этих занятий, которые вдохновляют меня и помогают оставаться креативным.
+        When I`m not writing code, you can find me doing one of these things that inspire me and help me stay creative.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

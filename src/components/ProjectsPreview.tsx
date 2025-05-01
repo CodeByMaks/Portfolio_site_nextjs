@@ -92,7 +92,7 @@ export default function FeaturedProjects() {
                       className="border-white/20 text-white hover:bg-white/10 hover:border-white/40 group"
                     >
                       <span className="text-black dark:text-white flex items-center gap-1">
-                        Подробнее
+                      Learn more
                         <span className="group-hover:translate-x-1 transition-transform">
                           →
                         </span>
@@ -117,7 +117,7 @@ export default function FeaturedProjects() {
               variant="ghost" 
               className="dark:text-white text-black border dark:border-white/20 border-gray-700 hover:bg-white/10 hover:border-white/40 px-8 py-6 text-lg"
             >
-              Смотреть все проекты
+              See all projects
             </Button>
           </Link>
         </motion.div>
