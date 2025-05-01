@@ -7,6 +7,8 @@ import { Input } from '@/components/shadcn/ui/input'
 import { Textarea } from '@/components/shadcn/ui/textarea'
 import { Button } from '@/components/shadcn/ui/button'
 import axios from 'axios'
+import { Github, Linkedin, Mail, FileDown, Send } from 'lucide-react'
+import Link from 'next/link'
 
 const CanvasBackground = dynamic(() => import('./CanvasBackground'), {
   ssr: false,
@@ -39,7 +41,6 @@ export default function Contact() {
     setIsSubmitting(true)
 
     try {
-      // Отправка на свой API route
       const response = await axios.post('/api/contact', formData)
 
       if (response.status === 200 && response.data.ok) {
@@ -143,6 +144,25 @@ export default function Contact() {
                 'Send Message'
               )}
             </Button>
+
+            {/* Social Icons Section */}
+            <div className="flex justify-center space-x-4 pt-4">
+              <Link href="mailto:maksdonfort@gmail.com" target="_blank" className="dark:text-purple-300 text-black hover:text-fuchsia-400 transition-colors">
+                <Mail size={20} />
+              </Link>
+              <Link href="https://github.com/CodeByMaks" target="_blank" className="dark:text-purple-300 text-black hover:text-fuchsia-400 transition-colors">
+                <Github size={20} />
+              </Link>
+              <Link href="https://linkedin.com/in/yourlinkedin" target="_blank" className="dark:text-purple-300 text-black hover:text-fuchsia-400 transition-colors">
+                <Linkedin size={20} />
+              </Link>
+              <Link href="https://t.me/maks_donfort" target="_blank" className="dark:text-purple-300 text-black hover:text-fuchsia-400 transition-colors">
+                <Send size={20} />
+              </Link>
+              <Link href="/CV%20Resume.pdf" download="Maks_CV.pdf" className="dark:text-purple-300 text-black hover:text-fuchsia-400 transition-colors">
+                <FileDown size={20} />
+              </Link>
+            </div>
           </form>
         </motion.div>
       </div>

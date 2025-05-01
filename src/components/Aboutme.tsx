@@ -209,9 +209,9 @@ export default function AboutMe() {
         variants={containerVariants}
         className="mt-32 relative z-10"
       >
-        <h3 className="text-3xl font-bold text-center mb-6">Мои инструменты</h3>
+        <h3 className="text-3xl font-bold text-center mb-6">My Tools</h3>
         <p className="text-lg text-gray-600 dark:text-gray-300 mb-12 text-center max-w-3xl mx-auto">
-          Эти инструменты помогают мне в ежедневной работе, делая процесс разработки более эффективным и приятным.
+        These tools help me in my daily work, making the development process more efficient and enjoyable.
         </p>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -224,7 +224,7 @@ export default function AboutMe() {
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-600/20 to-pink-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative flex flex-col items-center text-center">
                 <div className="w-20 h-20 mb-4 relative rounded-full overflow-hidden border-2 border-white/20 shadow-lg">
-                  <Image src={tool.icon} alt={tool.name} layout="fill" objectFit="contain" className="p-2" />
+                  <Image src={tool.icon} alt={tool.name} layout="fill" objectFit="cover" className="rounded-full" />
                 </div>
                 <h4 className="text-xl font-semibold mb-2">{tool.name}</h4>
                 <p className="text-sm text-gray-600 dark:text-gray-300">{tool.description}</p>

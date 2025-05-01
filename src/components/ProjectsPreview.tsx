@@ -6,14 +6,15 @@ import { Button } from '@/components/shadcn/ui/button'
 import Image from 'next/image'
 import Link from 'next/link'
 import { BackgroundBeams } from './aceternity/ui/background-beams'
+import darkshop from '@/assets/image.png'
 
 const projects = [
   {
     title: 'DarkByteShop',
     description: 'Интернет-магазин товаров по кибербезопасности с современным UI и защищенными платежами.',
-    image: '/projects/darkbyteshop.png',
+    image: darkshop,
     link: '/projects',
-    tags: ['Next.js', 'Stripe', 'Tailwind', 'Framer Motion']
+    tags: ['Next.js', 'i18n', 'Tailwind', 'next-router']
   },
   {
     title: 'Портфолио с анимацией',
@@ -26,7 +27,7 @@ const projects = [
 
 export default function FeaturedProjects() {
   return (
-    <section className="relative z-10 py-32 w-full overflow-hidden">
+    <section className="relative z-10 md:py-32 py-20 w-full overflow-hidden">
       <BackgroundBeams className="absolute inset-0 opacity-20 -z-10" />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -59,7 +60,7 @@ export default function FeaturedProjects() {
               
               <Link href={project.link}>
                 <Card className="relative h-full overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl transition-all duration-500 group-hover:border-white/30 shadow-xl hover:shadow-2xl">
-                  <div className="relative h-60 overflow-hidden">
+                  <div className="relative h-72 overflow-hidden">
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -81,7 +82,7 @@ export default function FeaturedProjects() {
                       ))}
                     </div>
                     
-                    <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-2xl font-bold dark:text-white mb-2 group-hover:text-blue-400 transition-colors">
                       {project.title}
                     </h3>
                     <p className="text-gray-400 mb-4">{project.description}</p>
@@ -90,7 +91,7 @@ export default function FeaturedProjects() {
                       variant="outline" 
                       className="border-white/20 text-white hover:bg-white/10 hover:border-white/40 group"
                     >
-                      <span className="flex items-center gap-1">
+                      <span className="text-black dark:text-white flex items-center gap-1">
                         Подробнее
                         <span className="group-hover:translate-x-1 transition-transform">
                           →
@@ -114,7 +115,7 @@ export default function FeaturedProjects() {
           <Link href="/projects">
             <Button 
               variant="ghost" 
-              className="text-white border border-white/20 hover:bg-white/10 hover:border-white/40 px-8 py-6 text-lg"
+              className="dark:text-white text-black border dark:border-white/20 border-gray-700 hover:bg-white/10 hover:border-white/40 px-8 py-6 text-lg"
             >
               Смотреть все проекты
             </Button>

@@ -98,7 +98,7 @@ export default function Hero() {
         </Link>
       </motion.div>
 
-      <div className="absolute inset-0 z-10 h-full w-full bg-black/80 dark:bg-black/40" />
+      <div className="absolute inset-0 z-10 h-full w-full bg-black/50 dark:bg-black/40" />
     
       <Suspense fallback={<div>Loading...</div>}>
         <ThreeDMarquee

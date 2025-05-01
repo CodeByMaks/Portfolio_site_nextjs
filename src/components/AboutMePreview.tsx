@@ -28,7 +28,7 @@ export default function AboutMePreview() {
   const words = `I'm Max — a front-end developer with a focus on interfaces, animations, and modern technologies. I love to create projects that combine aesthetics, convenience and performance. I work with Next.js, TypeScript, Tailwind, Framer Motion and more.`
 
   return (
-    <section ref={ref} className="relative w-full overflow-hidden z-10 py-32 px-4 md:px-10">
+    <section ref={ref} className="relative w-full overflow-hidden z-10 md:py-32 py-20 px-4 md:px-10">
       <WavyBackground className="absolute inset-0" />
       <BackgroundBeams />
       
@@ -154,7 +154,7 @@ export default function AboutMePreview() {
                   variant="outline" 
                   className="border-white/30 text-white hover:bg-white/10 transition group relative overflow-hidden"
                 >
-                  <span className="relative z-10 flex items-center gap-2">
+                  <span className="dark:text-white text-black relative z-10 flex items-center gap-2">
                     Learn more
                     <motion.span
                       initial={{ x: 0 }}

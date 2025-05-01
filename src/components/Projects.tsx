@@ -36,7 +36,7 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <div className="relative min-h-screen w-full px-6 py-24 bg-background text-foreground overflow-hidden">
+    <div className="relative min-h-screen w-full px-6 md:py-24 py-16 bg-background text-foreground overflow-hidden">
       <BackgroundBeams className="absolute inset-0 opacity-10" />
       
       <div className="container mx-auto max-w-7xl relative z-10">
@@ -102,7 +102,7 @@ export default function ProjectsPage() {
                       className="border-white/20 hover:border-white/40 hover:bg-white/10"
                     >
                       <a href={project.live} target="_blank" rel="noopener noreferrer">
-                        <span className="flex items-center gap-1">
+                        <span className="text-black dark:text-white flex items-center gap-1">
                           🌐 Live
                         </span>
                       </a>
@@ -113,7 +113,7 @@ export default function ProjectsPage() {
                       className="text-white hover:bg-white/10"
                     >
                       <a href={project.code} target="_blank" rel="noopener noreferrer">
-                        <span className="flex items-center gap-1">
+                        <span className="text-black dark:text-white flex items-center gap-1">
                           💻 Code
                         </span>
                       </a>
@@ -135,7 +135,7 @@ export default function ProjectsPage() {
           <Link href={'https://github.com/CodeByMaks'}>
           <Button 
             variant="outline" 
-            className="border-white/20 hover:border-white/40 hover:bg-white/10 px-8 py-6 text-lg"
+            className="dark:border-white/20 border-gray-800 hover:border-white/40 hover:bg-white/10 px-8 py-6 text-lg"
           >
             Больше проектов на GitHub
           </Button>
