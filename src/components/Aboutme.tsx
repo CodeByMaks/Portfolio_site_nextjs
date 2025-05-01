@@ -119,7 +119,7 @@ export default function AboutMe() {
         className="relative z-10 flex flex-col-reverse lg:flex-row items-center justify-between gap-16"
       >
         <motion.div variants={itemVariants} className="w-full lg:w-1/2">
-          <h2 className="text-5xl font-bold mb-6 leading-tight bg-clip-text text-black dark:text-white">
+          <h2 className="text-5xl font-bold mb-6 leading-tight bg-clip-text text-black dark:text-white ">
             Привет, я Макс!
           </h2>
           
