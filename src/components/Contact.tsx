@@ -34,51 +34,31 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const sendToTelegram = async (data: typeof formData) => {
-    const botToken = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN
-    const chatId = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID
-    
-    const text = `
-      📩 Новое сообщение с сайта:
-      👤 Имя: ${data.name}
-      📧 Email: ${data.email}
-      ✉️ Сообщение: ${data.message}
-    `
-
-    try {
-      await axios.post(
-        `https://api.telegram.org/bot${botToken}/sendMessage`,
-        {
-          chat_id: chatId,
-          text: text,
-          parse_mode: 'HTML'
-        }
-      )
-    } catch (error) {
-      console.error('Ошибка при отправке:', error)
-      throw error
-    }
-  }
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
 
     try {
-      await sendToTelegram(formData)
-      setNotification({
-        show: true,
-        message: 'Сообщение успешно отправлено!',
-        isError: false
-      })
-      setFormData({ name: '', email: '', message: '' })
+      // Отправка на свой API route
+      const response = await axios.post('/api/contact', formData)
+
+      if (response.status === 200 && response.data.ok) {
+        setNotification({
+          show: true,
+          message: 'Сообщение успешно отправлено!',
+          isError: false,
+        })
+        setFormData({ name: '', email: '', message: '' })
+      } else {
+        throw new Error('Ошибка на стороне Telegram API')
+      }
     } catch (error) {
+      console.error('Ошибка при отправке:', error)
       setNotification({
         show: true,
         message: 'Ошибка при отправке сообщения',
-        isError: true
+        isError: true,
       })
-      console.error('Error:', error)
     } finally {
       setIsSubmitting(false)
       setTimeout(() => setNotification({ show: false, message: '', isError: false }), 5000)
@@ -91,7 +71,6 @@ export default function Contact() {
     <div className="relative w-full h-screen overflow-hidden">
       <CanvasBackground />
 
-      {/* Уведомление */}
       {notification.show && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -99,7 +78,7 @@ export default function Contact() {
           exit={{ opacity: 0, y: 20 }}
           className={`fixed top-4 right-4 z-50 p-4 rounded-lg bg-black/80 backdrop-blur-sm border ${
             notification.isError ? 'border-purple-500 text-purple-400' : 'border-fuchsia-500 text-fuchsia-400'
-          } shadow-lg shadow-${notification.isError ? 'purple-500/30' : 'fuchsia-500/30'}`}
+          } shadow-lg`}
         >
           {notification.message}
         </motion.div>
@@ -120,42 +99,33 @@ export default function Contact() {
             onSubmit={handleSubmit}
             className="rounded-xl p-8 space-y-6 bg-black/20 backdrop-blur-sm border border-purple-400/20 shadow-lg shadow-purple-500/10 hover:shadow-fuchsia-500/20 transition-all duration-300"
           >
-            <div className="space-y-2">
-              <Input
-                name="name"
-                type="text"
-                required
-                value={formData.name}
-                onChange={handleChange}
-                className="bg-black/30 text-purple-100 placeholder-purple-400/50 border border-purple-400/30 focus:border-fuchsia-400/60 focus:ring-1 focus:ring-fuchsia-400/30 neon-input"
-                placeholder="Your Name"
-              />
-            </div>
-
-            <div className="space-y-2">
-              <Input
-                name="email"
-                type="email"
-                required
-                value={formData.email}
-                onChange={handleChange}
-                className="bg-black/30 text-purple-100 placeholder-purple-400/50 border border-purple-400/30 focus:border-fuchsia-400/60 focus:ring-1 focus:ring-fuchsia-400/30 neon-input"
-                placeholder="your.email@example.com"
-              />
-            </div>
-
-            <div className="space-y-2">
-              <Textarea
-                name="message"
-                required
-                value={formData.message}
-                onChange={handleChange}
-                rows={5}
-                className="bg-black/30 text-purple-100 placeholder-purple-400/50 border border-purple-400/30 focus:border-fuchsia-400/60 focus:ring-1 focus:ring-fuchsia-400/30 neon-input"
-                placeholder="Your message here..."
-              />
-            </div>
-
+            <Input
+              name="name"
+              type="text"
+              required
+              value={formData.name}
+              onChange={handleChange}
+              className="bg-black/30 text-purple-100 placeholder-purple-400/50 border border-purple-400/30 focus:border-fuchsia-400/60 focus:ring-1 focus:ring-fuchsia-400/30 neon-input"
+              placeholder="Your Name"
+            />
+            <Input
+              name="email"
+              type="email"
+              required
+              value={formData.email}
+              onChange={handleChange}
+              className="bg-black/30 text-purple-100 placeholder-purple-400/50 border border-purple-400/30 focus:border-fuchsia-400/60 focus:ring-1 focus:ring-fuchsia-400/30 neon-input"
+              placeholder="your.email@example.com"
+            />
+            <Textarea
+              name="message"
+              required
+              value={formData.message}
+              onChange={handleChange}
+              rows={5}
+              className="bg-black/30 text-purple-100 placeholder-purple-400/50 border border-purple-400/30 focus:border-fuchsia-400/60 focus:ring-1 focus:ring-fuchsia-400/30 neon-input"
+              placeholder="Your message here..."
+            />
             <Button
               type="submit"
               disabled={isSubmitting}
@@ -176,42 +146,6 @@ export default function Contact() {
           </form>
         </motion.div>
       </div>
-
-      <style jsx global>{`
-        .neon-text {
-          text-shadow: 0 0 8px rgba(192, 132, 252, 0.6), 0 0 16px rgba(217, 70, 239, 0.4);
-        }
-        .neon-input {
-          transition: all 0.3s ease;
-        }
-        .neon-input:focus {
-          box-shadow: 0 0 8px rgba(217, 70, 239, 0.3);
-        }
-        .neon-button {
-          position: relative;
-          overflow: hidden;
-        }
-        .neon-button::after {
-          content: '';
-          position: absolute;
-          top: -50%;
-          left: -50%;
-          width: 200%;
-          height: 200%;
-          background: linear-gradient(
-            to bottom right,
-            rgba(192, 132, 252, 0),
-            rgba(217, 70, 239, 0.3),
-            rgba(192, 132, 252, 0)
-          );
-          transform: rotate(30deg);
-          animation: shine 3s infinite;
-        }
-        @keyframes shine {
-          0% { transform: rotate(30deg) translate(-30%, -30%); }
-          100% { transform: rotate(30deg) translate(30%, 30%); }
-        }
-      `}</style>
     </div>
   )
 }
