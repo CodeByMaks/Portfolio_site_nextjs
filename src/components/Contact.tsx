@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import dynamic from 'next/dynamic'
-import { useTheme } from 'next-themes'
 import { Input } from '@/components/shadcn/ui/input'
 import { Textarea } from '@/components/shadcn/ui/textarea'
 import { Button } from '@/components/shadcn/ui/button'
@@ -24,8 +23,6 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [mounted, setMounted] = useState(false)
   const [notification, setNotification] = useState({ show: false, message: '', isError: false })
-
-  const { resolvedTheme } = useTheme()
 
   useEffect(() => {
     setMounted(true)
@@ -90,8 +87,6 @@ export default function Contact() {
 
   if (!mounted) return null
 
-  const isDark = resolvedTheme === 'dark'
-
   return (
     <div className="relative w-full h-screen overflow-hidden">
       <CanvasBackground />
@@ -102,9 +97,9 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
-          className={`fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg ${
-            notification.isError ? 'bg-red-500' : 'bg-green-500'
-          } text-white`}
+          className={`fixed top-4 right-4 z-50 p-4 rounded-lg bg-black/80 backdrop-blur-sm border ${
+            notification.isError ? 'border-purple-500 text-purple-400' : 'border-fuchsia-500 text-fuchsia-400'
+          } shadow-lg shadow-${notification.isError ? 'purple-500/30' : 'fuchsia-500/30'}`}
         >
           {notification.message}
         </motion.div>
@@ -117,15 +112,13 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
           className="w-full max-w-md px-4"
         >
-          <h1 className={`text-3xl font-bold text-center mb-8 ${isDark ? 'text-white' : 'text-black'}`}>
+          <h1 className="text-4xl font-bold text-center mb-8 bg-clip-text text-black dark:text-white">
             Contact Me
           </h1>
 
           <form
             onSubmit={handleSubmit}
-            className={`rounded-lg p-8 border space-y-6 backdrop-blur-md ${
-              isDark ? 'bg-white/10 border-white/20' : 'bg-black/10 border-black/20'
-            }`}
+            className="rounded-xl p-8 space-y-6 bg-black/20 backdrop-blur-sm border border-purple-400/20 shadow-lg shadow-purple-500/10 hover:shadow-fuchsia-500/20 transition-all duration-300"
           >
             <div className="space-y-2">
               <Input
@@ -134,11 +127,7 @@ export default function Contact() {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className={`${
-                  isDark
-                    ? 'bg-black/40 text-white placeholder-white/70 border-white/30 focus:ring-white/50'
-                    : 'bg-white text-black placeholder-black/50 border-black/30 focus:ring-black/50'
-                } focus:ring-2`}
+                className="bg-black/30 text-purple-100 placeholder-purple-400/50 border border-purple-400/30 focus:border-fuchsia-400/60 focus:ring-1 focus:ring-fuchsia-400/30 neon-input"
                 placeholder="Your Name"
               />
             </div>
@@ -150,11 +139,7 @@ export default function Contact() {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className={`${
-                  isDark
-                    ? 'bg-black/40 text-white placeholder-white/70 border-white/30 focus:ring-white/50'
-                    : 'bg-white text-black placeholder-black/50 border-black/30 focus:ring-black/50'
-                } focus:ring-2`}
+                className="bg-black/30 text-purple-100 placeholder-purple-400/50 border border-purple-400/30 focus:border-fuchsia-400/60 focus:ring-1 focus:ring-fuchsia-400/30 neon-input"
                 placeholder="your.email@example.com"
               />
             </div>
@@ -166,11 +151,7 @@ export default function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 rows={5}
-                className={`${
-                  isDark
-                    ? 'bg-black/40 text-white placeholder-white/70 border-white/30 focus:ring-white/50'
-                    : 'bg-white text-black placeholder-black/50 border-black/30 focus:ring-black/50'
-                } focus:ring-2`}
+                className="bg-black/30 text-purple-100 placeholder-purple-400/50 border border-purple-400/30 focus:border-fuchsia-400/60 focus:ring-1 focus:ring-fuchsia-400/30 neon-input"
                 placeholder="Your message here..."
               />
             </div>
@@ -178,11 +159,7 @@ export default function Contact() {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full py-6 text-lg font-medium transition-all ${
-                isDark
-                  ? 'bg-white text-black hover:bg-gray-100 focus-visible:ring-gray-400'
-                  : 'bg-black text-white hover:bg-gray-900 focus-visible:ring-gray-600'
-              } focus-visible:ring-2`}
+              className="w-full py-6 text-lg font-medium bg-gradient-to-r from-purple-500/80 to-fuchsia-600/80 text-white hover:from-purple-500 hover:to-fuchsia-600 transition-all duration-300 shadow-lg shadow-purple-500/20 hover:shadow-fuchsia-500/40 neon-button"
             >
               {isSubmitting ? (
                 <span className="flex items-center justify-center">
@@ -190,15 +167,51 @@ export default function Contact() {
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
-                  Отправка...
+                  Sending...
                 </span>
               ) : (
-                'Отправить сообщение'
+                'Send Message'
               )}
             </Button>
           </form>
         </motion.div>
       </div>
+
+      <style jsx global>{`
+        .neon-text {
+          text-shadow: 0 0 8px rgba(192, 132, 252, 0.6), 0 0 16px rgba(217, 70, 239, 0.4);
+        }
+        .neon-input {
+          transition: all 0.3s ease;
+        }
+        .neon-input:focus {
+          box-shadow: 0 0 8px rgba(217, 70, 239, 0.3);
+        }
+        .neon-button {
+          position: relative;
+          overflow: hidden;
+        }
+        .neon-button::after {
+          content: '';
+          position: absolute;
+          top: -50%;
+          left: -50%;
+          width: 200%;
+          height: 200%;
+          background: linear-gradient(
+            to bottom right,
+            rgba(192, 132, 252, 0),
+            rgba(217, 70, 239, 0.3),
+            rgba(192, 132, 252, 0)
+          );
+          transform: rotate(30deg);
+          animation: shine 3s infinite;
+        }
+        @keyframes shine {
+          0% { transform: rotate(30deg) translate(-30%, -30%); }
+          100% { transform: rotate(30deg) translate(30%, 30%); }
+        }
+      `}</style>
     </div>
   )
 }

@@ -43,7 +43,6 @@ const images = [
   "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/yarn/yarn-original.svg"
 ];
 
-
 export default function Hero() {
   const [hasAnimated, setHasAnimated] = useState(false)
 
@@ -59,6 +58,8 @@ export default function Hero() {
   }, [inView])
 
   return (
+    <>
+    
     <div className="relative mx-auto flex md:h-[700px] h-[450px] w-full flex-col items-center justify-center overflow-hidden rounded-3xl">
       <motion.h2
         ref={ref}
@@ -67,7 +68,7 @@ export default function Hero() {
         transition={{ duration: 0.8, ease: 'easeOut' }}
         className="relative z-20 mx-auto max-w-4xl text-center text-2xl font-bold text-balance text-white md:text-4xl lg:text-5xl"
       >
-        Hi, I’m Maks – a front-end developer
+        Hi, I’m Muhsin – a front-end developer
       </motion.h2>
 
       <motion.p
@@ -106,5 +107,6 @@ export default function Hero() {
         />
       </Suspense>
     </div>
+    </>
   )
 }

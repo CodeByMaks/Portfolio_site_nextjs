@@ -98,7 +98,7 @@ export function Footer() {
 			</div>
 
 			<div className='mt-10 text-center text-xs text-muted-foreground/70'>
-				© {new Date().getFullYear()} Maks. Built with Next.js & Tailwind
+				© {new Date().getFullYear()} Muhsin. Built with Next.js & Tailwind
 				CSS.
 			</div>
 		</motion.footer>
