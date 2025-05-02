@@ -25,7 +25,7 @@ export default function AboutMePreview() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
-  const words = `I'm Max — a front-end developer with a focus on interfaces, animations, and modern technologies. I love to create projects that combine aesthetics, convenience and performance. I work with Next.js, TypeScript, Tailwind, Framer Motion and more.`
+  const words = `I'm Muhsin — a front-end developer with a focus on interfaces, animations, and modern technologies. I love to create projects that combine aesthetics, convenience and performance. I work with Next.js, TypeScript, Tailwind, Framer Motion and more.`
 
   return (
     <section ref={ref} className="relative w-full overflow-hidden z-10 md:py-32 py-20 px-4 md:px-10">
