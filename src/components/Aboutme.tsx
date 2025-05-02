@@ -15,7 +15,7 @@ const techStack = [
   { category: 'Frontend', items: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Shadcn/ui'] },
   { category: '3D & Animation', items: ['Three.js', 'Framer Motion', 'GSAP'] },
   { category: 'Core', items: ['JavaScript', 'HTML/CSS', 'REST API', 'Redux Toolkit', 'axios', 'Git'] },
-  { category: 'Want to lear', items: ['C / C++/ C#', 'GO', 'Python', 'SQL', 'Assembly', 'Docker'] }
+  { category: 'Want to learn', items: ['C / C++/ C#', 'GO', 'Python', 'SQL', 'Assembly', 'Docker'] }
 ]
 
 const hobbies = [
