@@ -115,7 +115,7 @@ export default function FeaturedProjects() {
           <Link href="/projects">
             <Button 
               variant="ghost" 
-              className="dark:text-white text-black border dark:border-white/20 border-gray-700 hover:bg-white/10 hover:border-white/40 px-8 py-6 text-lg"
+              className="dark:text-white text-black border dark:border-white/20 border-gray-700 cursor-pointer hover:bg-white/10 hover:border-white/40 px-8 py-6 text-lg"
             >
               See all projects
             </Button>

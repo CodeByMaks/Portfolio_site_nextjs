@@ -39,7 +39,7 @@ export function Header() {
                 pathname === item.href ? 'text-foreground' : 'text-muted-foreground'
               )}
             >
-              <span className="relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full">
+              <span className="relative after:absolute p-1 after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full">
                 {item.name}
               </span>
             </Link>

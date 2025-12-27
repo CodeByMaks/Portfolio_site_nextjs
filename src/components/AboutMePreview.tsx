@@ -152,7 +152,7 @@ export default function AboutMePreview() {
               <Link href="/about">
                 <Button 
                   variant="outline" 
-                  className="border-white/30 text-white hover:bg-white/10 transition group relative overflow-hidden"
+                  className="border-white/30 text-white hover:bg-white/10 transition group cursor-pointer relative overflow-hidden"
                 >
                   <span className="dark:text-white text-black relative z-10 flex items-center gap-2">
                     Learn more

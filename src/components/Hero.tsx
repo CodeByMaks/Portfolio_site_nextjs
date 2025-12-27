@@ -59,7 +59,6 @@ export default function Hero() {
 
   return (
     <>
-    
     <div className="relative mx-auto flex md:h-[700px] h-[450px] w-full flex-col items-center justify-center overflow-hidden rounded-3xl">
       <motion.h2
         ref={ref}
@@ -75,7 +74,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 40 }}
         animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 0.3, duration: 0.8, ease: 'easeOut' }}
-        className="relative z-20 mx-auto max-w-2xl py-8 text-center text-sm text-neutral-200 md:text-base"
+        className="relative z-20 mx-auto max-w-2xl md:px-0 px-7 py-8 text-center text-sm text-neutral-200 md:text-base"
       >
         Decide. Change. Strive forward. Think. Accept challenges. Get up and act. Abandon stereotypes. Reach. Dream. Open. Believe. Stop. Listen to yourself. Grow. Win. Look at life with open eyes.
       </motion.p>

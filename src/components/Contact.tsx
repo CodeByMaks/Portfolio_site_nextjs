@@ -153,7 +153,7 @@ export default function Contact() {
               <Link href="https://github.com/CodeByMaks" target="_blank" className="dark:text-purple-300 text-black hover:text-fuchsia-400 transition-colors">
                 <Github size={20} />
               </Link>
-              <Link href="https://linkedin.com/in/yourlinkedin" target="_blank" className="dark:text-purple-300 text-black hover:text-fuchsia-400 transition-colors">
+              <Link href="#" target="_blank" className="dark:text-purple-300 text-black hover:text-fuchsia-400 transition-colors">
                 <Linkedin size={20} />
               </Link>
               <Link href="https://t.me/maks_donfort" target="_blank" className="dark:text-purple-300 text-black hover:text-fuchsia-400 transition-colors">

@@ -76,7 +76,7 @@ export function Footer() {
 						<li className='flex items-center gap-2'>
 							<Linkedin size={16} />{' '}
 							<a
-								href='https://linkedin.com/in/yourlinkedin'
+								href='#'
 								target='_blank'
 								className='hover:text-foreground'
 							>
