@@ -7,7 +7,7 @@ import { Input } from '@/components/shadcn/ui/input'
 import { Textarea } from '@/components/shadcn/ui/textarea'
 import { Button } from '@/components/shadcn/ui/button'
 import axios from 'axios'
-import { Github, Linkedin, Mail, FileDown, Send } from 'lucide-react'
+import { Github, Mail, FileDown, Send } from 'lucide-react'
 import Link from 'next/link'
 
 const CanvasBackground = dynamic(() => import('./CanvasBackground'), {
@@ -153,13 +153,10 @@ export default function Contact() {
               <Link href="https://github.com/CodeByMaks" target="_blank" className="dark:text-purple-300 text-black hover:text-fuchsia-400 transition-colors">
                 <Github size={20} />
               </Link>
-              <Link href="#" target="_blank" className="dark:text-purple-300 text-black hover:text-fuchsia-400 transition-colors">
-                <Linkedin size={20} />
-              </Link>
-              <Link href="https://t.me/maks_donfort" target="_blank" className="dark:text-purple-300 text-black hover:text-fuchsia-400 transition-colors">
+              <Link href="https://t.me/muhsin_behbudov" target="_blank" className="dark:text-purple-300 text-black hover:text-fuchsia-400 transition-colors">
                 <Send size={20} />
               </Link>
-              <Link href="/CV%20Resume.pdf" download="Maks_CV.pdf" className="dark:text-purple-300 text-black hover:text-fuchsia-400 transition-colors">
+              <Link href="/CV%20Resume.pdf" download="Muhsin_Behbudov.pdf" className="dark:text-purple-300 text-black hover:text-fuchsia-400 transition-colors">
                 <FileDown size={20} />
               </Link>
             </div>

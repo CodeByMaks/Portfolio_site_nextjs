@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { FileDown, Github, Linkedin, Mail } from 'lucide-react'
+import { FileDown, Github, Mail, Send } from 'lucide-react'
 import Link from 'next/link'
 
 export function Footer() {
@@ -74,13 +74,13 @@ export function Footer() {
 							</a>
 						</li>
 						<li className='flex items-center gap-2'>
-							<Linkedin size={16} />{' '}
+							<Send size={16} />{' '}
 							<a
-								href='#'
+								href='https://t.me/muhsin_behbudov'
 								target='_blank'
 								className='hover:text-foreground'
 							>
-								LinkedIn
+								Telegram
 							</a>
 						</li>
 						<li className='flex items-center gap-2'>
