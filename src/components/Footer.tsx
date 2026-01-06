@@ -57,10 +57,10 @@ export function Footer() {
 						<li className='flex items-center gap-2'>
 							<Mail size={16} />{' '}
 							<a
-								href='mailto:maksdonfort@gmail.com'
+								href='mailto:maks88821@gmail.com'
 								className='hover:text-foreground'
 							>
-								maksdonfort@gmail.com
+								maks88821@gmail.com
 							</a>
 						</li>
 						<li className='flex items-center gap-2'>
@@ -88,7 +88,7 @@ export function Footer() {
 							<a
 								href='/CV%20Resume.pdf'
 								className='flex items-center gap-2 text-sm hover:text-foreground'
-								download="Maks_CV.pdf"
+								download="Muhsin_behbudov.pdf"
 							>
 								My CV
 							</a>

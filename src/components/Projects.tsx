@@ -6,31 +6,61 @@ import { Card, CardContent } from '@/components/shadcn/ui/card'
 import { Button } from '@/components/shadcn/ui/button'
 import { BackgroundBeams } from './aceternity/ui/background-beams'
 import Link from 'next/link'
+import darkshop from '@/assets/image.png'
+import instagramm from '@/assets/instagram.png'
+import SpaceLabs from '@/assets/SpaceLabs.png'
+import Environment from '@/assets/Environment.png'
+import Amaz from '@/assets/amaz.png'
+import team from '@/assets/team.jpg'
 
 const projects = [
   {
     title: 'DarkByteShop',
     description: 'Интернет-магазин по кибербезопасности с адаптивным дизайном и корзиной.',
-    image: '/projects/darkbyteshop.png',
-    tech: ['Next.js', 'Tailwind CSS', 'Swiper', 'ShadCN'],
-    live: 'https://darkbyteshop.vercel.app',
-    code: 'https://github.com/CodeByMaks?tab=repositories'
+    image: darkshop,
+    tech: ['Next.js', 'i18n', 'Tailwind', 'next-router', 'Swiper'],
+    live: '#',
+    code: 'https://github.com/CodeByMaks/DarkByteShop'
   },
   {
-    title: 'Portfolio',
-    description: 'Минималистичный сайт-портфолио с анимациями GSAP и ScrollMagic.',
-    image: '/projects/portfolio.png',
-    tech: ['React', 'GSAP', 'Three.js'],
-    live: 'https://yourportfolio.vercel.app',
-    code: 'https://github.com/CodeByMaks?tab=repositories'
+    title: 'Instagram Clone',
+    description: 'Создания копии популярного сервиса Instagram.',
+    image: instagramm,
+    tech: ['React', 'TypeScript', 'react-router', 'redux-toolkit', 'zod', 'date-fns', 'radix-ui'],
+    live: '#',
+    code: 'https://github.com/CodeByMaks/instagram'
   },
   {
-    title: 'AI Image Generator',
+    title: 'SpaceLabs',
+    description: 'Информационная платформа о мониторинге загрезнения воздуха с использованием 3D-графики.',
+    image: SpaceLabs,
+    tech: ['Python', 'ThreeJs', 'NextJS', 'Zustand', 'FastAPI'],
+    live: '#',
+    code: 'https://github.com/CodeByMaks/SpaceLabs'
+  },
+   {
+    title: 'Environment',
+    description: 'Туристическая веб-платформа для познания природы и достопримечательностей.',
+    image: Environment,
+    tech: ['Html', 'Css', 'Python', 'Django', 'JavaScript', 'mySQL'],
+    live: '#',
+    code: 'https://github.com/CodeByMaks/environment'
+  },
+   {
+    title: 'AmazMarkets',
     description: 'Генератор изображений на основе искусственного интеллекта.',
-    image: '/projects/ai-generator.png',
-    tech: ['OpenAI', 'Node.js', 'React'],
-    live: 'https://ai-generator.vercel.app',
-    code: 'https://github.com/CodeByMaks?tab=repositories'
+    image: Amaz,
+    tech: ['React', 'react-router', 'tailwindcss', 'vercel'],
+    live: 'https://exam-react-ten.vercel.app/',
+    code: 'https://github.com/CodeByMaks/exam-react'
+  },
+   {
+    title: 'Team Project Pixel',
+    description: 'Team project',
+    image: team,
+    tech: ['Html', 'Css', 'JavaScript', 'Figma'],
+    live: '#',
+    code: 'https://github.com/CodeByMaks/Pixel'
   }
 ]
 
@@ -101,7 +131,7 @@ export default function ProjectsPage() {
                       variant="outline" 
                       className="border-white/20 hover:border-white/40 hover:bg-white/10"
                     >
-                      <a href={project.live} target="_blank" rel="noopener noreferrer">
+                      <a href={project.live} rel="noopener noreferrer">
                         <span className="text-black dark:text-white flex items-center gap-1">
                           🌐 Live
                         </span>

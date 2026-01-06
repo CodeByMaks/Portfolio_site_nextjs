@@ -7,6 +7,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { BackgroundBeams } from './aceternity/ui/background-beams'
 import darkshop from '@/assets/image.png'
+import instagramm from '@/assets/instagram.png'
 
 const projects = [
   {
@@ -14,14 +15,14 @@ const projects = [
     description: 'Интернет-магазин товаров по кибербезопасности с современным UI и защищенными платежами.',
     image: darkshop,
     link: '/projects',
-    tags: ['Next.js', 'i18n', 'Tailwind', 'next-router']
+    tags: ['Next.js', 'i18n', 'Tailwind', 'next-router', 'Swiper']
   },
   {
-    title: 'Портфолио с анимацией',
-    description: 'Интерактивное портфолио с плавными анимациями и эффектами параллакса.',
-    image: '/projects/portfolio.png',
+    title: 'Instagram Clone',
+    description: 'Создания копии популярного сервиса Instagram.',
+    image: instagramm,
     link: '/projects',
-    tags: ['GSAP', 'ScrollMagic', 'Three.js', 'React']
+    tags: ['React', 'TypeScript', 'react-router', 'redux-toolkit', 'zod', 'date-fns', 'radix-ui']
   }
 ]
 
