@@ -48,7 +48,7 @@ const projects = [
   },
    {
     title: 'AmazMarkets',
-    description: 'Генератор изображений на основе искусственного интеллекта.',
+    description: 'Веб-платформа онлайн магазина.',
     image: Amaz,
     tech: ['React', 'react-router', 'tailwindcss', 'vercel'],
     live: 'https://exam-react-ten.vercel.app/',
